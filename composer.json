@@ -1,0 +1,15 @@
+{
+    "name": "vishwacollab/resume-parser",
+    "description": "Resume parser dependencies for VishwaCollab",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "smalot/pdfparser": "^2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "lib/"
+        ]
+    }
+}
+

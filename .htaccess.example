@@ -1,0 +1,21 @@
+# VishwaCollab - Apache Configuration Example
+# Rename to .htaccess and customize for production
+# Note: SetEnv only works when AllowOverride includes AuthConfig/All
+
+# Set environment variables for production (uncomment and fill in)
+# SetEnv DB_HOST your-db-host
+# SetEnv DB_USER your-db-user
+# SetEnv DB_PASS your-db-password
+# SetEnv DB_NAME vishwacollab
+# SetEnv BASE_URL https://yourdomain.com/
+
+# Optional: Protect setup scripts from public access
+# <FilesMatch "^(init_db|create_|setup_all|migrate_db|quick_setup|QUICK_FIX)\.php$">
+#     Require ip 127.0.0.1
+#     # Or: Require valid-user (if using basic auth)
+# </FilesMatch>
+
+# Force HTTPS
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

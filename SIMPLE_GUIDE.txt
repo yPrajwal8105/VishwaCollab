@@ -1,0 +1,58 @@
+═══════════════════════════════════════════════════════════════
+   SIMPLE GUIDE: How to Upload and View Seniors Placements
+═══════════════════════════════════════════════════════════════
+
+PART 1: CONVERT EXCEL TO CSV
+───────────────────────────────────────────────────────────────
+1. Open your Excel file
+2. Click "File" → "Save As"
+3. Choose "CSV (Comma delimited)" as file type
+4. Save the file
+5. ✅ Done! You now have a CSV file
+
+
+PART 2: UPLOAD TO WEBSITE
+───────────────────────────────────────────────────────────────
+1. Open browser
+2. Go to: http://localhost/Vishwacollab/login.php
+3. Login as TPO (if you don't have account, sign up first)
+4. After login, in the left menu, click "Upload Placements"
+   (OR go directly to: http://localhost/Vishwacollab/tpo-upload-placements.php)
+5. Click "Choose File" button
+6. Select your CSV file
+7. Click "Upload and Import" button
+8. Wait for success message
+9. ✅ Done! Data is uploaded
+
+
+PART 3: VIEW PLACEMENTS
+───────────────────────────────────────────────────────────────
+OPTION A - Direct Link:
+1. Open browser
+2. Go to: http://localhost/Vishwacollab/seniors-placements.php
+3. ✅ You'll see all placements!
+
+OPTION B - From Student Dashboard:
+1. Login as student
+2. In left menu, click "Seniors Placements"
+3. ✅ You'll see all placements!
+
+
+WHAT YOU CAN DO ON VIEW PAGE:
+───────────────────────────────────────────────────────────────
+✓ Search by name, company, or job title
+✓ Filter by batch year
+✓ Filter by course
+✓ Filter by company
+✓ See all details in nice cards
+
+
+QUICK LINKS:
+───────────────────────────────────────────────────────────────
+Upload Page:    http://localhost/Vishwacollab/tpo-upload-placements.php
+View Page:      http://localhost/Vishwacollab/seniors-placements.php
+Login Page:     http://localhost/Vishwacollab/login.php
+
+
+═══════════════════════════════════════════════════════════════
+

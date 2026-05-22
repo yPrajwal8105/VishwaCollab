@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Sample Data - VishwaCollab</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f5f7fa;
+            line-height: 1.6;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .step {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #1a73e8;
+        }
+        .step h3 {
+            color: #1a73e8;
+            margin-bottom: 1rem;
+        }
+        .code {
+            background: #f1f3f4;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 0.5rem 0;
+            border: 1px solid #e0e0e0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #0d47a1;
+        }
+        .success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #2e7d32;
+            margin: 1rem 0;
+        }
+        .warning {
+            background: #fff3e0;
+            color: #f57c00;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #f57c00;
+            margin: 1rem 0;
+        }
+        .screenshot {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin: 1rem 0;
+            max-width: 100%;
+        }
+        ol, ul {
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Import Sample Data to VishwaCollab</h1>
+        <p>Follow these steps to import sample data into your VishwaCollab database using phpMyAdmin.</p>
+
+        <div class="step">
+            <h3>Step 1: Open phpMyAdmin</h3>
+            <p>Make sure XAMPP is running and open phpMyAdmin:</p>
+            <div class="code">http://localhost/phpmyadmin</div>
+            <p>You should see the phpMyAdmin interface with your databases listed.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Select or Create Database</h3>
+            <p>In the left sidebar, look for the <strong>vishwacollab</strong> database:</p>
+            <ul>
+                <li>If it exists, click on it to select it</li>
+                <li>If it doesn't exist, click "New" and create a database named <strong>vishwacollab</strong></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Import SQL File</h3>
+            <p>Once you're in the vishwacollab database:</p>
+            <ol>
+                <li>Click on the <strong>"Import"</strong> tab at the top</li>
+                <li>Click <strong>"Choose File"</strong> or <strong>"Browse"</strong></li>
+                <li>Navigate to your VishwaCollab folder and select <strong>vishwacollab_sample_data.sql</strong></li>
+                <li>Make sure the format is set to <strong>"SQL"</strong></li>
+                <li>Click <strong>"Go"</strong> or <strong>"Import"</strong></li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Verify Import</h3>
+            <p>After import, you should see:</p>
+            <ul>
+                <li>✅ <strong>4 tables created:</strong> students, companies, jobs, applications</li>
+                <li>✅ <strong>10 students</strong> with various skills and courses</li>
+                <li>✅ <strong>10 companies</strong> from different industries</li>
+                <li>✅ <strong>15 job postings</strong> with diverse requirements</li>
+                <li>✅ <strong>15 job applications</strong> with different statuses</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>Step 5: Test Search Functionality</h3>
+            <p>Now you can test the search functionality:</p>
+            <ol>
+                <li>Go to your VishwaCollab home page</li>
+                <li>Try searching for these terms:</li>
+                <ul>
+                    <li><strong>"Software"</strong> - Shows software developer jobs</li>
+                    <li><strong>"Python"</strong> - Shows Python-related jobs and students</li>
+                    <li><strong>"Tech"</strong> - Shows technology companies</li>
+                    <li><strong>"Data"</strong> - Shows data science jobs and students</li>
+                    <li><strong>"React"</strong> - Shows React developer positions</li>
+                </ul>
+            </ol>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Important Notes:</strong>
+            <ul>
+                <li>Make sure XAMPP MySQL service is running</li>
+                <li>If you get errors, check that the database name is exactly "vishwacollab"</li>
+                <li>If tables already exist, the import will add data to existing tables</li>
+                <li>Backup your database before importing if you have important data</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <strong>🎉 Success!</strong><br>
+            Once imported, your search functionality will show real results from the database. You can search for jobs, companies, and students with various skills and get relevant matches.
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.php" class="btn">Go to Home Page</a>
+            <a href="index.php#searchResults" class="btn">Test Search</a>
+        </div>
+    </div>
+</body>
+</html>

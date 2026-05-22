@@ -1,0 +1,55 @@
+═══════════════════════════════════════════════════════════════
+           TPO LOGIN CREDENTIALS
+═══════════════════════════════════════════════════════════════
+
+OPTION 1: Use Default TPO Account (After Running create_tpo_account.php)
+───────────────────────────────────────────────────────────────
+Email:    tpo@vishwacollab.com
+Password: tpo123
+
+───────────────────────────────────────────────────────────────
+
+OPTION 2: Use Sample Account (After Running init_db.php)
+───────────────────────────────────────────────────────────────
+Email:    tpo@vishwacollab.com
+Password: password
+
+───────────────────────────────────────────────────────────────
+
+OPTION 3: Create Your Own TPO Account
+───────────────────────────────────────────────────────────────
+1. Go to: http://localhost/Vishwacollab/signup.php
+2. Select "TPO" as user type
+3. Enter your email and password
+4. Sign up
+5. Login with your credentials
+
+───────────────────────────────────────────────────────────────
+
+HOW TO CREATE DEFAULT TPO ACCOUNT:
+───────────────────────────────────────────────────────────────
+1. Open browser
+2. Go to: http://localhost/Vishwacollab/create_tpo_account.php
+3. The account will be created automatically
+4. Use the credentials shown on the page
+
+───────────────────────────────────────────────────────────────
+
+LOGIN PAGE:
+───────────────────────────────────────────────────────────────
+http://localhost/Vishwacollab/login.php
+
+───────────────────────────────────────────────────────────────
+
+WHAT CAN TPO DO:
+───────────────────────────────────────────────────────────────
+✓ Upload placement data (CSV files)
+✓ View all students
+✓ View all companies
+✓ View all jobs
+✓ View placements
+✓ Generate reports
+✓ Manage placement records
+
+═══════════════════════════════════════════════════════════════
+
