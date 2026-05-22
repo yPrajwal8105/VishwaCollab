@@ -1,11 +1,10 @@
-[phases.setup]
-nixPkgs = ["php82", "php82Extensions.mysqli", "nodejs_20", "composer"]
+providers = ["node"]
 
 [phases.install]
-cmds = ["npm install", "composer install"]
+cmds = ["npm install"]
 
 [phases.build]
 cmds = ["npm run build"]
 
 [start]
-cmd = "php -S 0.0.0.0:$PORT"
+cmd = "npm start"
