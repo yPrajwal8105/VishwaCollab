@@ -8,7 +8,8 @@ $db_error = null;
 
 try {
     // Create connection
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $port = defined('DB_PORT') ? (int)DB_PORT : 3306;
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, $port);
     
     // Check connection
     if ($conn->connect_error) {

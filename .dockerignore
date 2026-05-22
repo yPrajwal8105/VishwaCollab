@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.gitignore
+nixpacks.toml
+Dockerfile
+.dockerignore
+README.md
+SETUP_GUIDE.md
+SIMPLE_GUIDE.txt
+final_vishwacollab_export.sql
+alumni_placements_export.csv
+vishwacollab_sample_data.sql

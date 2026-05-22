@@ -26,14 +26,12 @@ if (!defined('BASE_URL')) {
     if ($baseUrlFromEnv) {
         define('BASE_URL', rtrim($baseUrlFromEnv, '/') . '/');
     } else {
-        $isLocalHost = in_array($_SERVER['SERVER_NAME'] ?? '', ['localhost', '127.0.0.1'], true);
-        if ($isLocalHost) {
-            $scheme = $isHttps ? 'https' : 'http';
-            $host = $_SERVER['HTTP_HOST'] ?? '127.0.0.1:8080';
-            define('BASE_URL', $scheme . '://' . $host . '/');
-        } else {
-            define('BASE_URL', 'https://yourdomain.infinityfreeapp.com/Vishwacollab/');
-        }
+        $scheme = $isHttps ? 'https' : 'http';
+        $host = $_SERVER['HTTP_HOST'] ?? '127.0.0.1';
+        $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+        $dir = dirname($scriptName);
+        $path = ($dir === '/' || $dir === '\\') ? '/' : rtrim($dir, '/\\') . '/';
+        define('BASE_URL', $scheme . '://' . $host . $path);
     }
 }
 
@@ -43,9 +41,16 @@ if (!defined('BASE_URL')) {
 ----------------------------*/
 
 // Detect if running on localhost
-$isLocal = ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1');
+$isLocal = (($_SERVER['SERVER_NAME'] ?? '') == 'localhost' || ($_SERVER['SERVER_NAME'] ?? '') == '127.0.0.1');
 
-if ($isLocal) {
+if (getenv('MYSQLHOST')) {
+    // Production database (Railway)
+    define('DB_HOST', getenv('MYSQLHOST'));
+    define('DB_USER', getenv('MYSQLUSER'));
+    define('DB_PASS', getenv('MYSQLPASSWORD'));
+    define('DB_NAME', getenv('MYSQLDATABASE'));
+    define('DB_PORT', getenv('MYSQLPORT') ?: '3306');
+} else if ($isLocal) {
     // Local XAMPP database
     // Use TCP host to avoid macOS socket path issues with `localhost`.
     define('DB_HOST', '127.0.0.1');
@@ -65,7 +70,8 @@ if ($isLocal) {
    DATABASE CONNECTION
 ----------------------------*/
 
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$port = defined('DB_PORT') ? (int)DB_PORT : 3306;
+$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, $port);
 
 if (!$conn) {
     die("Database Connection Failed: " . mysqli_connect_error());
